@@ -42,5 +42,19 @@ JeL
 
 JeL<-c(J,L)
 JeL
-#c() é uma função
+#c() é uma funcao
 ?c()
+
+#funcoes---
+
+a<-c(10,20,30,40)
+
+summary(a)
+
+summary(JeL)
+
+#essas funçoes ja estao no r base
+#como usar uma funcao fora do r base?
+
+#1 instalar o pacote caso nao tenha com install.packeges("nome do pacote")
+#2 chamar o pacote library("nome do pacote")
