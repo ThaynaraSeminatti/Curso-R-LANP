@@ -42,16 +42,22 @@ JeL
 
 JeL<-c(J,L)
 JeL
+JeL[1]
+
 #c() é uma funcao
 ?c()
 
 #Funcoes----
 
-a<-c(10,20,30,40)
+numeros<-c(15,23,15,32,23)
 
-summary(a)
+summary(numeros)
 
 summary(JeL)
+
+numeros<-as.factor(numeros)
+summary(numeros)
+
 
 #essas funçoes ja estao no r base
 #como usar uma funcao fora do r base?
@@ -59,7 +65,7 @@ summary(JeL)
 #1 instalar o pacote caso nao tenha com install.packeges("nome do pacote")
 #2 chamar o pacote library("nome do pacote")
 
-install.packages('stringr')
+#install.packages('stringr')
 library(stringr)
 
 ?str_c
@@ -68,7 +74,6 @@ nome<-"Thaynara"
 sobrenome<-"Seminatti"
 str_c(nome,sobrenome)
 
-str_c(nome," ",sobrenome)
 
 #Operadores----
 #soma
@@ -118,10 +123,22 @@ d!=c
 
 #e
 10>50 & 7>12
-10<50 | 7<12
+10<50 & 7<12
 
 #negação
 10<50
 !10<50
 
+#Vetores----
 
+is.vector(JeL)
+mode(JeL)
+
+is.vector(numeros)
+mode(numeros)
+
+numeros1<-c(2,3,"4",5)
+is.vector(numeros1)
+mode(numeros1)
+
+#Matrizes----
