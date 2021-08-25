@@ -190,3 +190,21 @@ data
 #alterando valor da coluna
 data$nome[data$nome=="joao"]<-"joão"
 
+#Importando Data Frame----
+#para importar um data frame, é importante pensar em duas coisas:
+#o dado vai estar no seu diretorio?
+#qual tipo de arquivo ele é? csv/xlsx/txt?
+
+#arquivos csv
+#install.packeges("readr")
+library('readr')
+
+imbl<-read.csv("imbl.csv", sep = ";", dec = ".",encoding = "UTF-8")
+View(imbl)
+
+library(readxl)
+imbl<-read_xlsx("imbl.xlsx",na="")
+View(imbl)
+
+
+
