@@ -142,3 +142,51 @@ is.vector(numeros1)
 mode(numeros1)
 
 #Matrizes----
+#criando uma matriz qualquer
+m<-matrix(1:16, nrow=4)
+m
+
+#acessando um valor dela
+m[1,3]
+
+#mudando valor 
+m[1,3]<-"a"
+m
+
+#Data Frames----
+
+#criando data frame
+
+nome<-c("joao","maria","antonio")
+peso=c(70,62,90)
+altura<-c(1.75,1.60,1.85)
+
+data<-data.frame(nome,peso,altura)
+
+#outra maneira, colocando direto (mais usual)
+
+data<-data.frame(nome=c("joao","maria","antonio"),
+                 peso=c(70,62,90),
+                 altura=c(1.75,1.60,1.85))
+
+#adc coluna
+data$imc<-c(22.86,24.22,26.30)
+
+#ou fazendo a conta direto
+data$imc<-data$peso/(data$altura)^2
+data$imc
+
+#exluindo coluna
+data$peso<-NULL
+
+#excluindo linha
+data<-data[-1,]#mas isso pode ser um problema
+data
+
+#excluindo com estrutura condicional
+data<-data[!(data$nome=="joao" ),]
+data
+
+#alterando valor da coluna
+data$nome[data$nome=="joao"]<-"joão"
+
