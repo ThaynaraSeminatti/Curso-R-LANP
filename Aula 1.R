@@ -196,10 +196,8 @@ data$nome[data$nome=="joao"]<-"joão"
 #qual tipo de arquivo ele é? csv/xlsx/txt?
 
 #arquivos csv
-#install.packeges("readr")
-library('readr')
 
-imbl<-read.csv("imbl.csv", sep = ";", dec = ".",encoding = "UTF-8")
+imbl<-read.csv("imbl.csv", sep = ";", dec = ".",encoding = "ANSI")
 View(imbl)
 
 library(readxl)
