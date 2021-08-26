@@ -8,42 +8,42 @@ library(tidyverse)
 
 library("readxl")
 
-imbl<-read.csv("imbl.csv", sep = ";",dec = ",", encoding = "ANSI")
+imdb<-read.csv("imdb.csv", sep = ";",dec = ",", encoding = "ANSI")
 
-table(imbl$cor)#ou outra variavel categorica
+table(imdb$cor)#ou outra variavel categorica
 
 #usandoo pipe %>% 
 #atalho Ctrl+Shift+m
 
 #adc uma nova variavel
-imbl.mutate<-imbl %>%
+imdb.mutate<-imdb %>%
   mutate(duracao.horas=duracao/60)
 
 
 
 #selecionando ou tirando variavel pelo nome
-imbl.select<-imbl %>% 
+imdb.select<-imdb %>% 
   select(titulo, ano, nota_imdb, cor)#selecionou
 
-imbl.select1<-imbl %>% 
+imdb.select1<-imdb %>% 
   select(-titulo)#tirou
 
 
 
 #reagrupando
-imbl.arrange<-imbl %>% 
+imdb.arrange<-imdb %>% 
   arrange(ator_1)#desc para deixar decrescente 
 
 
 
 #filtrando
-imbl.filter<-imbl %>% 
+imdb.filter<-imdb %>% 
   filter(ano==2015 & classificacao=="Livre")
 
 
 
 #agrupando e reduzindo
-imbl.group<-imbl %>% 
+imdb.group<-imdb %>% 
   group_by(classificacao) %>% 
   summarise(mediaNota=mean(nota_imdb))
 

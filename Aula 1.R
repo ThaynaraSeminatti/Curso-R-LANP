@@ -197,12 +197,12 @@ data$nome[data$nome=="joao"]<-"joão"
 
 #arquivos csv
 
-imbl<-read.csv("imbl.csv", sep = ";", dec = ".",encoding = "ANSI")
-View(imbl)
+imdb<-read.csv("imdb.csv", sep = ";", dec = ".",encoding = "ANSI")
+View(imdb)
 
 library(readxl)
-imbl<-read_xlsx("imbl.xlsx",na="")
-View(imbl)
+imbl<-read_xlsx("imdb.xlsx",na="")
+View(imdb)
 
 
 
