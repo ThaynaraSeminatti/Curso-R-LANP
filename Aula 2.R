@@ -45,5 +45,5 @@ imbl.filter<-imbl %>%
 #agrupando e reduzindo
 imbl.group<-imbl %>% 
   group_by(classificacao) %>% 
-  summarise(media=mean(orcamento))
+  summarise(mediaNota=mean(nota_imdb))
 
