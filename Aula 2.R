@@ -47,3 +47,24 @@ imdb.group<-imdb %>%
   group_by(classificacao) %>% 
   summarise(mediaNota=mean(nota_imdb))
 
+#testando outro 
+banco<-read.csv("bank.csv", sep = ";")
+
+#summarise e groupby juntos
+banco %>% 
+  group_by(education,marital) %>% 
+  summarise(mediaSaldos=mean(balance))
+  
+#grafico disso
+banco %>% 
+  group_by(education,marital) %>% 
+  summarise(mediaSaldos=mean(balance)) %>% 
+  ggplot(aes(y=mediaSaldos, x=education , fill=marital))+
+  geom_col(position = "dodge")
+
+#outro
+banco %>% 
+  group_by(education,marital) %>% 
+  summarise(mediaSaldos=mean(balance)) %>% 
+  ggplot(aes(y=mediaSaldos, x=education ,group=marital))+
+  geom_line(aes(color=marital))
